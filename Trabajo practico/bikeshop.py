@@ -55,41 +55,56 @@ menu = """
 
 
 #Algoritmo 
-
+print("                                                   ")
+print("                                                   ")
 print ("**********Bienvenidos Lebron Bike Shop***********")
 while True:
     print(menu)
     option = input("\nSeleccione la opcion deseada(1-5) :")
     match option:
+        
         case "1":
             #agregamos el producto
             print("\nIngrese los datos de la bicicleta que sea agregar :")
-            brand = input("Marca :").strip()
+            brand = input("Marca: ").strip()
             #validar 
             while not brand :
                 print("Tiene que agregar una marca")
-                brand = input("Marca : ").strip()
+                brand = input("Marca: ").strip()
 
-            model = input("Modelo:").strip()
-            price = int(input("Precio :"))
-
+            model = input("Modelo: ").strip()
+            
+            
+            #Validacion de precio 
+            price = int(input("Precio: "))
+            while price <=0 :
+                print( " el precio tiene que ser mayor a 0 ")
+           
+                price=int(input("Precio:  "))
+            
             #Creo el nuevo modelo
             new_bike =[brand, model, price]
 
             #lo agrego al final de la lista
             bikes.append(new_bike)
             print(f"La bicicleta {brand}, {model} fue agregada a nuestro E-Shop")
-            input(" \nPresione Enter para volver al menu") 
+            
+            #Volver al menu principal o salir 
+            option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
+            if option =="5":
+                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                break
         case "2":
             #aca mostramos todas las bicieltas 
             print(f"\nbicicletas disponibles {len(bikes) :}")
             for index in range(len(bikes)):
                 print(f"{index+1} - Marca : {bikes[index][0]}  Modelo : {bikes[index][1]}  Precio: {bikes[index][2]}")
-            input(" \nPresione Enter para volver al menu") 
-
+            option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
+            if option =="5":
+                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                break
         case "3":
-            print("\n******Busca en nuestro E-Shop tu proxima bicicleta******".upper()
-                  )
+            print("\n******Busca en nuestro E-Shop tu proxima bicicleta******".upper())
             search_bike = input("Ingresa la marca que esta buscando : ").strip()
 
             for bike in bikes :
@@ -100,9 +115,11 @@ while True:
             else:
         # Este else se ejecuta si el for terminó sin encontrar nada
                  print("\nNo se encontró ninguna bicicleta con esa marca.")
-
-            input("\nPresione Enter para volver al menú")
-              
+            
+            option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
+            if option =="5":
+                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                break  
         case "4":
        
             # print("has seleccionado la opcion Eliminar bicicleta")  
@@ -139,8 +156,10 @@ while True:
             # else:
             #     print("indice invalido, no existe es bicicleta")
             
-            input(" \nPresione Enter para volver al menu") 
-
+            option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
+            if option =="5":
+                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                break
 
              
             #Mostras todas las bicicletas
