@@ -2,7 +2,7 @@
 LISTAS 
 son como los array
 """
-
+from colorama import Fore, Back, Style, init
 
 numbers =[43,56,100,56,299] # Lista vacia 
 print(type(numbers))

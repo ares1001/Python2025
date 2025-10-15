@@ -29,6 +29,10 @@ El sistema debe permitir eliminar un producto de la lista, identificándolo por 
 
 """
 
+from colorama import Fore, Back, Style, init
+ 
+init()
+
 
 bike_1= ["Canyon", "Speedmax",5500]
 bike_2=["Cervelo", "P5", 8600]
@@ -57,7 +61,7 @@ menu = """
 #Algoritmo 
 print("                                                   ")
 print("                                                   ")
-print ("**********Bienvenidos Lebron Bike Shop***********")
+print (Fore.RED  + "**********Bienvenidos Lebron Bike Shop***********")
 while True:
     print(menu)
     option = input("\nSeleccione la opcion deseada(1-5) :")
@@ -69,7 +73,7 @@ while True:
             brand = input("Marca: ").strip()
             #validar 
             while not brand :
-                print("Tiene que agregar una marca")
+                print(Fore.RED  +"Tiene que agregar una marca")
                 brand = input("Marca: ").strip()
 
             model = input("Modelo: ").strip()
@@ -92,7 +96,7 @@ while True:
             #Volver al menu principal o salir 
             option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
             if option =="5":
-                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                print(Fore.GREEN+ "\nGracias por ser parte de la fanilia Lebron Bike Shop")
                 break
         case "2":
             #aca mostramos todas las bicieltas 
@@ -158,7 +162,7 @@ while True:
             
             option = input("\nPresione Enter para volver al menu anterior o escriba '5' para salir ").strip()            
             if option =="5":
-                print("\nGracias por ser parte de la fanilia Lebron Bike Shop")
+                print(Fore.GREEN+"\nGracias por ser parte de la fanilia Lebron Bike Shop")
                 break
 
              
@@ -180,6 +184,6 @@ while True:
             print("\n Opcion invalida, intente nuevamente")
             input(" \n Presione Enter para volver al menu")
 
-print("\n********Gracias por ser parte de Lebron Bike Shop************")
+print(Fore.GREEN+"\n********Gracias por ser parte de Lebron Bike Shop************")
 
        
