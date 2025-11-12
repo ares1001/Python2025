@@ -66,3 +66,24 @@ def agregar_libro_v2(titulo,genero="Novela",copias=1):
 
 agregar_libro_v2("El alquimista","Novela")
 agregar_libro_v2("Don quijote")
+
+""" titulo = input("ingrese titulo")
+genero = input("ingrese genero")
+copias = input("ingrese copias")
+
+agregar_libros_v2=(titulo,genero,copias)
+
+print(agregar_libro_v2) """
+
+
+def crear_usuario(nombre,email,activo=True):
+    print(f"usuario : {nombre}")
+    print(f"email : {email}")
+    if activo:
+        estado ='OK'
+    else:
+        estado ='X'
+    print(f"Estado {estado}")
+
+
+crear_usuario("Ariel", "ari@gmial.com")    
